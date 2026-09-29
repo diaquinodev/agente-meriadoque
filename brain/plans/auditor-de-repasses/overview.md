@@ -2,6 +2,17 @@
 
 Brief: [[plans/auditor-de-repasses/brief]]
 
+## Status (2026-09-29)
+
+- Fases 1–10 implementadas; 10 PRs draft empilhados em `diaquinodev/auditor-de-repasses`
+  (#1 base `main`, #N base fase N-1), CI verde em todos. Código local em
+  `D:\PROJETOS\auditor-de-repasses`.
+- Desvios do plano: pandas removido (csv + openpyxl bastam); `ReplayProvider` complementado
+  por `OfflineProvider` (demo sem IA), pois não havia chave do Gemini.
+- Pendente com o usuário: revisar e fazer merge (1 → 10, "Create a merge commit"); criar a
+  chave do Gemini e rodar `avaliar --provedor gemini --cenarios 3` + `conciliar --gravar`;
+  prints da tela; decidir se o repositório fica público.
+
 ## Context
 
 Seller de e-commerce precisa conferir se as taxas e prazos de repasse de um payment
