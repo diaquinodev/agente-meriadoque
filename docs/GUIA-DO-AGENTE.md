@@ -178,15 +178,15 @@ quebrou? Um `git clone` e está tudo de volta.
 
 | # | Gap | Risco | Solução | Status |
 |---|---|---|---|---|
-| 1 | Nenhum repositório tem cópia no GitHub | **Perder tudo de novo** | Instalar `gh` (✅ v2.101.0), login, criar repo, `git push` | ⏳ falta o login (você) |
+| 1 | Nenhum repositório tem cópia no GitHub | **Perder tudo de novo** | Instalar `gh`, login, criar repo, `git push` | ✅ github.com/diaquinodev/agente-meriadoque (privado) |
 | 2 | CLI `claude` não instalado no terminal | Noodle não consegue abrir agentes (`noodle start` falha) | `npm install -g --allow-scripts=@anthropic-ai/claude-code @anthropic-ai/claude-code` | ✅ v2.1.284 |
 | 3 | Python é só atalho da Microsoft Store | Automações e skill `ruminate` não rodam | `winget install Python.Python.3.12` | ✅ 3.12.10 |
 | 4 | Gemini CLI não encontrado no PATH deste terminal | Uso híbrido pelo terminal não funciona | Instalar/checar Gemini CLI | ⏳ confirmar com você |
 | 5 | `bash` fora do PATH | Scripts `.sh` do Noodle podem não rodar no Windows | Testados via Git Bash ✅; validar no primeiro `noodle start --once` | ⏳ |
 | 6 | Tudo configurado em Opus | Custo alto | Roteamento por modelo (seção 6) | ✅ |
 | 7 | Opção A (QG + repos separados) | Cada projeto novo precisa das skills/brain | Criar script/template de "novo projeto" | ⏳ próxima conversa |
-| 8 | Identidade do Git só neste repo | Commits de outros projetos sem autor | `git config --global` | ⏳ |
-| 9 | Branch se chama `master` | Fora do padrão de mercado (`main`) | `git branch -m master main` | ⏳ junto com o gap 1 |
+| 8 | Identidade do Git só neste repo | Commits de outros projetos sem autor | `git config --global` (e-mail noreply) | ✅ |
+| 9 | Branch se chama `master` | Fora do padrão de mercado (`main`) | `git branch -m master main` + `init.defaultBranch main` | ✅ |
 
 ---
 
