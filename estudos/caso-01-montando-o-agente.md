@@ -56,6 +56,10 @@ organização e verificação de qualidade.
   ações de risco com você.
 - **Não inventamos modelo**: "Gemini" não é um provedor suportado pelo Noodle (só
   `claude` e `codex`). Em vez de escrever uma configuração que quebraria, perguntamos.
+- **Testar em vez de supor**: criamos um `.gemini/settings.json` achando que seria
+  necessário. Depois perguntamos ao próprio `agy` o que ele carregava: ele já lia o
+  `AGENTS.md` e as skills sozinho. O arquivo foi apagado. Lição: verifique o
+  comportamento real antes de adicionar configuração (princípio *prove-it-works*).
 - **QG + repositórios separados (opção A)**: o Noodle trabalha por repositório, e para
   portfólio cada projeto no seu próprio repo no GitHub apresenta melhor.
 
