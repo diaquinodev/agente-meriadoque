@@ -1,6 +1,7 @@
 # Guia do Agente Meriadoque
 
-Manual do seu agente em linguagem simples. Os termos técnicos têm legenda 📖
+Manual do seu agente em linguagem simples. Para o passo a passo e a lista de
+comandos, veja `docs/MANUAL.md`. Os termos técnicos têm legenda 📖
 e estão explicados no glossário, no final.
 
 ---
