@@ -1,2 +1,5 @@
 # Noodle runtime state
 .noodle/
+
+# Local convenience link to .agents/skills (Windows junction / symlink elsewhere)
+.claude/skills
