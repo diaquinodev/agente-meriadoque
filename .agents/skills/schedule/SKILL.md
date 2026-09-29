@@ -32,8 +32,19 @@ progress across many. Only run independent items in parallel (same
 
 ## Route providers
 
-Use `routing.defaults` from `.noodle.toml` unless a task type or backlog
-item specifies otherwise. Set `runtime` explicitly on every stage.
+Pick the cheapest model that can do the stage well. Provider is always
+`claude` (Noodle supports only claude/codex).
+
+| Stage | Model |
+|---|---|
+| plan, review, architecture-heavy or ambiguous execute | `claude-opus-5-5` |
+| execute with a clear plan/brief | `claude-sonnet-5-5` |
+| docs, text generation, simple file edits, reflect | `claude-haiku-4-5-20251001` |
+
+When unsure between two tiers, pick the higher one for the first attempt of
+an item and note it in `rationale`. Fall back to `routing.defaults` in
+`.noodle.toml` for any unlisted task type. Set `runtime` explicitly on every
+stage.
 
 ## Write orders
 
