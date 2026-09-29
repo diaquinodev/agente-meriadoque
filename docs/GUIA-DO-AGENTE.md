@@ -80,9 +80,11 @@ Frases úteis:
 
 - Fonte única de regras: `AGENTS.md`.
   - Claude lê `CLAUDE.md`, que só contém `@AGENTS.md` (importa o arquivo).
-  - Gemini CLI: `.gemini/settings.json` aponta para `AGENTS.md`.
-  - AntiGravity: teste perguntando ao agente "quais regras do projeto você carregou?".
-    Se ele não citar o `AGENTS.md`, me avise que ajustamos.
+  - Antigravity (IDE e CLI `agy`, com Gemini 3.8 Flash): lê o `AGENTS.md` **nativamente**
+    e descobre as skills de `.agents/skills` sozinho. Testado em 2026-09-29, sem
+    nenhum arquivo extra de configuração.
+  - Para conferir a qualquer momento:
+    `agy --mode plan -p "Quais arquivos de regras e skills você carregou?"`
 - Nada de criar `GEMINI.md`, `rules.md` ou cópias. Cópias divergem e viram lixo.
 
 **Divisão de papéis sugerida**
@@ -98,8 +100,8 @@ Frases úteis:
 
 - Dois agentes editando o **mesmo arquivo ao mesmo tempo** → um apaga o trabalho do
   outro. Regra: um agente por tarefa.
-- Gemini não carrega as skills automaticamente → o `AGENTS.md` manda ele ler o
-  `SKILL.md` relevante.
+- O Gemini não recebe os *hooks* do Claude (ex: o índice do brain injetado ao abrir a
+  sessão) → o `AGENTS.md` manda todo agente ler `brain/index.md` antes de agir.
 - Memórias paralelas → só existe o `brain/`. Nada de `memory.md` solto.
 
 ---
@@ -112,7 +114,7 @@ Regra: **cérebro caro para pensar, cérebro barato para digitar**.
 |---|---|---|
 | Brainstorm, arquitetura, plano, revisão | Claude Opus 5.5 | Raciocínio mais forte; um erro aqui custa caro depois. |
 | Escrever código com plano definido | Claude Sonnet 5.5 | Ótimo em código e bem mais barato. |
-| Docs, textos, arquivos simples, reflect | Claude Haiku 4.5 ou Gemini | Tarefa mecânica; não precisa do mais caro. |
+| Docs, textos, arquivos simples, reflect | Claude Haiku 4.5 ou Gemini 3.8 Flash (`agy`) | Tarefa mecânica; não precisa do mais caro. O Gemini entra pela sua assinatura Google AI Pro. |
 
 Status: ✅ aplicado na skill `schedule` (ela escolhe o modelo de cada etapa) e no
 padrão do `.noodle.toml` (Sonnet).
@@ -126,7 +128,7 @@ O AntiGravity é baseado no VS Code, então tem terminal embutido (menu *Termina
 Recomendação:
 
 - **Painel de chat** (Claude/Gemini no AntiGravity) → conversar, brainstorm, estudar.
-- **Terminal embutido** → `claude` (CLI), `gemini` (CLI), `noodle`, `git`. É aqui
+- **Terminal embutido** → `claude` (CLI do Claude), `agy` (CLI do Antigravity/Gemini), `noodle`, `git`. É aqui
   que você "fica por dentro": vê cada comando rodando.
 - Os dois enxergam **a mesma pasta, os mesmos arquivos e as mesmas regras**.
 
@@ -181,7 +183,7 @@ quebrou? Um `git clone` e está tudo de volta.
 | 1 | Nenhum repositório tem cópia no GitHub | **Perder tudo de novo** | Instalar `gh`, login, criar repo, `git push` | ✅ github.com/diaquinodev/agente-meriadoque (privado) |
 | 2 | CLI `claude` não instalado no terminal | Noodle não consegue abrir agentes (`noodle start` falha) | `npm install -g --allow-scripts=@anthropic-ai/claude-code @anthropic-ai/claude-code` | ✅ v2.1.284 |
 | 3 | Python é só atalho da Microsoft Store | Automações e skill `ruminate` não rodam | `winget install Python.Python.3.12` | ✅ 3.12.10 |
-| 4 | Gemini CLI não encontrado no PATH deste terminal | Uso híbrido pelo terminal não funciona | Instalar/checar Gemini CLI | ⏳ confirmar com você |
+| 4 | Gemini CLI não encontrado no PATH deste terminal | Uso híbrido pelo terminal não funciona | O Gemini é usado pelo Antigravity CLI (`agy` 1.2.13), que já lê `AGENTS.md` e as skills | ✅ |
 | 5 | `bash` fora do PATH | Scripts `.sh` do Noodle podem não rodar no Windows | Testados via Git Bash ✅; validar no primeiro `noodle start --once` | ⏳ |
 | 6 | Tudo configurado em Opus | Custo alto | Roteamento por modelo (seção 6) | ✅ |
 | 7 | Opção A (QG + repos separados) | Cada projeto novo precisa das skills/brain | Criar script/template de "novo projeto" | ⏳ próxima conversa |
