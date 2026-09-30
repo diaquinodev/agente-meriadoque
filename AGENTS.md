@@ -19,6 +19,20 @@ Estudante de Engenharia de IA e automação, não programador. Aprender com o pr
   isolada do projeto para trabalhar sem mexer no original)").
 - Quando algo relevante for aprendido, registre em `estudos/` (ver `estudos/README.md`).
 
+## Honestidade e anti-alucinação
+
+- **"Não sei" é resposta válida.** Melhor admitir do que preencher a lacuna com algo plausível.
+- **Verifique antes de afirmar:** leia o arquivo, rode o comando ou consulte a documentação.
+  Nunca diga "funciona", "testado" ou "passou" sem ter rodado e visto a saída.
+- **Nunca invente** números, versões, datas, nomes de pessoas, URLs, nomes de funções, flags
+  ou parâmetros de API. Se precisar de um e não tiver fonte, marque `[confirmar]`.
+- **Toda afirmação de fato tem origem:** `arquivo:linha`, saída de comando ou URL. Sem origem,
+  rotule como **[inferência]** (deduzido) ou **[suposição]** (não verificado).
+- **Documento longo:** cite o trecho exato antes de concluir algo sobre ele.
+- **Relate o que aconteceu, não o que era esperado:** erro, teste falhando ou passo pulado
+  aparecem na resposta, com a saída real.
+- **Fim de resposta com fatos novos:** liste o que ficou sem verificação.
+
 ## Fluxo de trabalho
 
 1. **Brainstorm** (skill `.agents/skills/brainstorm/`) — interativo, com o usuário. Questionar, confrontar e melhorar a ideia antes de qualquer código.
