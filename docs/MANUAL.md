@@ -198,8 +198,10 @@ Antes de olhar, peça ao agente uma revisão crítica: **"Revise isso"** (ou `/r
 | PR normal (base = `main`) | **Squash and merge** | Vira 1 commit limpo na `main` |
 | **PRs empilhados** (cada um com base no anterior) | **Create a merge commit**, na ordem 1 → 2 → 3... | Mantém o histórico que o PR seguinte usa; com squash, cada PR seguinte daria conflito |
 
-Depois de cada merge: **Delete branch**. O GitHub muda sozinho a base do próximo PR
-empilhado para a `main`.
+PRs empilhados, a cada merge: **antes** de apagar a branch, troque a base do próximo PR para
+`main` (botão **Edit** ao lado do título do PR). Só então **Delete branch**. Se apagar
+antes, o GitHub pode **fechar** o próximo PR em vez de trocar a base (aconteceu no Auditor;
+dá para recuperar, mas dá trabalho).
 
 ### 5.4 Depois do merge
 

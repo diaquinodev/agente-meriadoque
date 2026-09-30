@@ -64,6 +64,11 @@ Total: 66 testes, CI com eval em todo PR, 10 PRs empilhados.
 - mypy estrito obriga a pensar no tipo de cada valor, o que evitou erros no relatório Excel.
 - Merge de PRs empilhados: use **"Create a merge commit"** na ordem 1 → 10. Com squash, cada
   PR seguinte precisa ser rebaseado (o agente faz isso por você).
+- **Incidente real no merge:** ao apagar a branch da fase 1 logo após o merge, o GitHub
+  **fechou** o PR #2 (que tinha a fase 1 como base) em vez de apontá-lo para a `main`.
+  Recuperação: recriar a branch a partir do commit da fase 1, reabrir o PR #2, trocar a base
+  para `main` e só então apagar a branch. Regra que ficou: **troque a base do próximo PR
+  antes de apagar a branch.** Nada foi perdido, porque o código estava na branch do #2.
 
 ## 6. O que estudar (prioridade)
 
