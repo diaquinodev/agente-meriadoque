@@ -56,6 +56,29 @@ onde nada entra na versão oficial sem passar por um Pull Request.
 - **PR mesmo trabalhando sozinho**: cria o hábito, gera um histórico que explica cada
   mudança e é exatamente o que recrutadores olham no seu GitHub.
 
+### Ajuste de processo: agrupar PRs
+
+No mesmo dia abrimos vários PRs pequenos, e o revisor automático **CodeRabbit** (um robô
+de IA que comenta em cada PR) estourou a cota do plano gratuito: "Review limit reached,
+next review in 43 minutes". Não bloqueava o merge, mas mostrou um desperdício: o robô
+gastava a cota revisando **texto**.
+
+Decisão (registrada no `AGENTS.md`):
+
+| Onde | Regra |
+|---|---|
+| QG (docs, brain, estudos) | 1 branch `sessao/AAAA-MM-DD`, 1 commit por assunto, **1 PR por sessão** |
+| Projetos de código | 1 PR **por fase do plano**, aberto como **draft** e marcado *Ready for review* só quando pronto |
+| CodeRabbit | `.coderabbit.yaml` ignora `docs/`, `estudos/`, `brain/` e `.md`; não revisa drafts |
+
+**Trade-off** (troca: o que se ganha e o que se perde): no QG, o *squash* transforma o
+dia inteiro em um commit só na `main`, e perdemos o histórico de cada mudança separada.
+Para documentação vale a pena; para código, não, por isso lá o PR continua sendo por fase.
+
+Lição de engenharia: **processo tem custo**. Um bom processo dá o controle que você
+precisa pelo menor custo (tempo, cota, atenção). Quando o processo começa a atrapalhar,
+ajuste o processo; não o abandone.
+
 ## 5. Hacks e pegadinhas
 
 - `git status -sb` mostra a branch atual e se você está à frente ou atrás da nuvem.
@@ -86,6 +109,8 @@ onde nada entra na versão oficial sem passar por um Pull Request.
 5. Qual a diferença entre *merge commit* e *squash and merge*?
 6. Depois do merge, que dois comandos deixam meu PC atualizado?
 7. Por que o GitHub não deixa eu aprovar meu próprio PR?
+8. Por que agrupar PRs no QG, mas não nos projetos de código?
+9. O que é um PR em modo *draft* e por que ele economiza revisões?
 
 ## 8. Referências
 

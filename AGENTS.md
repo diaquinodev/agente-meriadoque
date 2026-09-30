@@ -29,6 +29,18 @@ Estudante de Engenharia de IA e automação, não programador. Aprender com o pr
 
 Nunca pule direto para o código numa ideia nova sem passar pelo brainstorm.
 
+## Fluxo de Pull Requests
+
+O revisor automático (CodeRabbit, plano gratuito) tem cota por hora. PRs são agrupados:
+
+- **Neste repositório (QG):** uma branch por sessão de trabalho (`sessao/AAAA-MM-DD`),
+  um commit por assunto, **um único PR no fim da sessão** listando tudo o que mudou.
+  O usuário faz o *Squash and merge*.
+- **Repositórios de projeto (código):** uma branch e um PR **por fase do plano**. Abra o
+  PR como **draft**; marque *Ready for review* só quando a fase estiver pronta e com os
+  testes passando. Assim o CodeRabbit revisa uma vez, com tudo pronto.
+- Antes de apagar qualquer branch local, confirme que o PR está `MERGED`.
+
 ## Onde fica cada coisa
 
 | Pasta/arquivo | Para quê |
