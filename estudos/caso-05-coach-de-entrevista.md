@@ -1,6 +1,6 @@
 # Caso 05 — Coach de Entrevista: áudio ao vivo, Electron e um agente avaliador
 
-Data: 2026-09-30 · Repositório: `diaquinodev/coach-de-entrevista` (privado)
+Data: 2026-09-30 · Repositório: `diaquinodev/projeto-pessoal` (privado)
 
 ## 1. Contexto
 

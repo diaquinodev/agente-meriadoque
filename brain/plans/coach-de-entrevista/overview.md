@@ -1,7 +1,7 @@
 # Coach de Entrevista — plano
 
 Brief: [[coach-de-entrevista/brief]] · Prazo: 2026-09-30 10:30 (início 05:10).
-Repositório: `diaquinodev/coach-de-entrevista` (privado), local `D:\PROJETOS\coach-de-entrevista`.
+Repositório: `diaquinodev/projeto-pessoal` (privado), local `D:\PROJETOS\coach-de-entrevista`.
 
 ## Contexto
 
