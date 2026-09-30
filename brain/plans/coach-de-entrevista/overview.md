@@ -42,3 +42,6 @@ Teste ao vivo final: chamada com o irmão, fone, uma pergunta de cada tipo.
 - 2026-09-30 05:10 — brief aprovado, fase 1 iniciada.
 - 2026-09-30 06:08 — fases 1–6 com PR draft (#1–#6), 56 testes, CI verde. Pendente: chaves
   Groq/OpenRouter, chamada real e teste ao vivo com o irmão; merge dos PRs.
+- 2026-09-30 06:47 — chaves configuradas; chamadas reais OK (Groq 0,7 s; coach 3,9 s).
+  Guarda contra números inventados (achado no teste real). Fase 7 (#7): pergunta marcada +
+  modo estudo. Pendente: teste ao vivo com o irmão; merge #1–#7.

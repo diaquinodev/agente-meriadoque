@@ -39,6 +39,12 @@ Reconstrução, com foco **só em treino de entrevista**, de um projeto anterior
   - Técnica: resposta-modelo em três blocos (Abordagem / Código ou Query / Complexidade
     Big-O); o coach verifica se o candidato explicou a abordagem e citou a complexidade.
   - Gestor: trade-offs, riscos, decisões; o coach cobra justificativa de negócio.
+- **Adicionado em 2026-09-30 (fase 7), a pedido do usuário:** falas do entrevistador começam
+  como contexto (não vão para a IA); o usuário marca a pergunta (clique ou tecla P); **Modo
+  estudo** mostra roteiro e resposta-modelo ao marcar a pergunta. Motivo: apoio no
+  aprendizado para quem trava por ansiedade. Salvaguardas: janela visível, sem atalho global,
+  opcional, e o relatório registra cada resposta dada com apoio (placar mostra a evolução até
+  responder sem apoio).
 - **Out of scope (later):** compressão de contexto (medir antes de otimizar),
   MCP Bridge/handoff/deep-link, roteamento entre vários provedores
   (fica só a interface pronta para isso), Whisper local, modo "mesma sala", voz sintética.
