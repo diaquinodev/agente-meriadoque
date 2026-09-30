@@ -71,6 +71,14 @@ Total: 56 testes, 6 PRs empilhados, CI em todo PR.
   **Meça antes de mudar o código.**
 - Sem fone, o microfone captou a voz da caixa de som (eco). Solução em duas camadas: fone
   (prática) e descarte de trechos com ≥ 60% de sobreposição com o entrevistador (código).
+- **Primeira chamada real ao coach: a IA inventou "80% mais rápido"**, mesmo com o prompt
+  proibindo. Causa raiz: o trecho do currículo com o número real ficou em 4º lugar na busca
+  e só 3 trechos iam para a IA. Correção em duas camadas: mandar 5 trechos e uma **guarda
+  por código** (todo número da resposta-modelo precisa existir na resposta ou no
+  currículo; senão, pedir reescrita com `[X]`). Lição: **instrução no prompt não é
+  garantia; verificação em código é.**
+- Tentativa de filtrar ruído pelo campo `no_speech_prob` da Groq: medido antes de usar,
+  ele vem `0,000` até para ruído puro. Não serviu — e medir evitou um filtro inútil.
 - Ao ligar o microfone, o chiado inicial virava "fala". Solução: 500 ms de aquecimento só
   medindo o ruído, com teto para que uma fala nunca seja aprendida como ruído.
 
