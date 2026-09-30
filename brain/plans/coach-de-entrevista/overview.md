@@ -40,3 +40,5 @@ Teste ao vivo final: chamada com o irmão, fone, uma pergunta de cada tipo.
 ## Status
 
 - 2026-09-30 05:10 — brief aprovado, fase 1 iniciada.
+- 2026-09-30 06:08 — fases 1–6 com PR draft (#1–#6), 56 testes, CI verde. Pendente: chaves
+  Groq/OpenRouter, chamada real e teste ao vivo com o irmão; merge dos PRs.
