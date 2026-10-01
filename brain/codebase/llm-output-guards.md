@@ -22,6 +22,12 @@ Aprendido no Auditor de Repasses e no Coach de Entrevista. Relaciona com
   (1) *Pre-flight warmup* no boot aquece a conexão TLS e mede latência real com ping de 5 tokens;
   (2) *Auto-fallback com timeout:* se o modelo primário demorar >3.8s, comuta sozinho para modelo
   reserva (`gpt-4o-mini`), entregando resposta sem travar a tela.
+- **Proteção contra socket HTTP pendurado (hung socket) em duas camadas:** `fetch` nativo no
+  Node/Electron não possui timeout padrão. Se a nuvem do LLM mantiver a conexão aberta sem enviar dados,
+  o processo fica pendurado por até 240s (timeout TCP do SO). Solução em duas camadas:
+  (1) `AbortSignal.timeout(ms)` no cliente HTTP do backend com retry/fallback;
+  (2) `Promise.race` com timeout máximo (ex: 10s) na interface para garantir que a UI nunca trave.
+
 
 Aprendido no Recebimento Fiscal (caso 09):
 
@@ -39,4 +45,9 @@ Aprendido no Recebimento Fiscal (caso 09):
   de formatação (modo JSON), contada à parte.
 - **Gravação/reprodução com id explícito** quando a mensagem tem imagem (bytes variam entre
   sistemas); CI roda evals de IA sem chave.
+- **Prazo total na origem da chamada, não só na tela.** Coach (2026-10-01): tela mostrou
+  "Gerando resposta… (222.0s)". Um `Promise.race` de 10 s no frontend só para de esperar; a
+  requisição segue viva. O limite precisa ficar onde a chamada é feita (AbortController /
+  `httpx` com deadline total), cobrindo timeout × tentativas × backoff. Ex.: `ia.py` do
+  Recebimento Fiscal (120 s × 3 + pausas) pode prender a tela por mais de 6 min.
 
