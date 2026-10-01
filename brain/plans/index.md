@@ -6,3 +6,5 @@
 - [[coach-de-entrevista/overview]]
 - [[dashboard-precificacao/brief]]
 - [[dashboard-precificacao/overview]]
+- [[recebimento-fiscal/brief]]
+- [[recebimento-fiscal/overview]]
