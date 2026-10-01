@@ -17,3 +17,9 @@ Aprendido no Auditor de Repasses e no Coach de Entrevista. Relaciona com
   = 5 chamadas, não 80. Economiza cota da API gratuita e é mais realista.
 - **Gate humano depois da extração:** erro na extração do contrato contamina tudo;
   mostrar as regras extraídas para o usuário confirmar antes de conciliar.
+- **Chamada ao vivo não tolera cold-start nem intervenção manual:** em copiloto de entrevista,
+  o usuário não pode gerenciar opções no meio da conversa. A resiliência precisa ser autônoma:
+  (1) *Pre-flight warmup* no boot aquece a conexão TLS e mede latência real com ping de 5 tokens;
+  (2) *Auto-fallback com timeout:* se o modelo primário demorar >3.8s, comuta sozinho para modelo
+  reserva (`gpt-4o-mini`), entregando resposta sem travar a tela.
+
