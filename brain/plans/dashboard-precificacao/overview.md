@@ -22,3 +22,7 @@ Pasta local nova: `D:\PROJETOS\dashboard-precificacao` (a original com ç fica i
 ## Status
 
 - 2026-10-01 — brief e plano escritos; usuário aprovou anonimizar, público, corrigir antes.
+- 2026-10-01 — fases 1–3 com PR draft empilhados (#1–#3) em
+  `diaquinodev/dashboard-precificacao` (ainda privado). 32 testes + 13 e2e verdes; CI verde
+  em #1 e #2. Taxas atualizadas: Shopee <R$8 = 20% + metade do preço; TikTok 07/2026; ML
+  <R$79 virou média editável. Pendente: merge, tornar público, ligar Pages.

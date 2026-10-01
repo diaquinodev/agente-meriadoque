@@ -31,7 +31,7 @@
 - Verification (lint/types/tests): `npm run check` = eslint + prettier + tsc + node --test;
   `npm run e2e` (local) = fluxos na tela em 3 larguras + prints.
 - Success criteria: os 5 bugs do original têm teste de regressão; margem 0% → lucro extra
-  R$ 0,00 em toda faixa de custo 1–500; catálogo de exemplo e CSV com `;`/`,` e decimal BR/US
+  nunca negativo em custo 1–500 (R$ 0,00 salvo quando o preço cai no início de uma faixa); catálogo de exemplo e CSV com `;`/`,` e decimal BR/US
   carregam; sem rolagem horizontal em 360px.
 - Open questions: taxas vêm de blogs (fontes secundárias) → usuário confirma no painel de
   vendedor; taxa de transação Shopee de 2% e Campanha Destaque não confirmadas (padrão 0).
