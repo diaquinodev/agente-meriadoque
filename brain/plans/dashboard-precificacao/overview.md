@@ -26,3 +26,7 @@ Pasta local nova: `D:\PROJETOS\dashboard-precificacao` (a original com ç fica i
   `diaquinodev/dashboard-precificacao` (ainda privado). 32 testes + 13 e2e verdes; CI verde
   em #1 e #2. Taxas atualizadas: Shopee <R$8 = 20% + metade do preço; TikTok 07/2026; ML
   <R$79 virou média editável. Pendente: merge, tornar público, ligar Pages.
+- 2026-10-01 — **concluído.** PRs #1–#3 mergeados (merge commit, base trocada antes de
+  apagar cada branch). Histórico auditado; repo **público**; Pages ativo e testado:
+  https://diaquinodev.github.io/dashboard-precificacao/ . Estudo: `estudos/caso-08`.
+  Próximos passos (fora do MVP) estão no README do projeto.
