@@ -3,3 +3,6 @@
 
 # Local convenience link to .agents/skills (Windows junction / symlink elsewhere)
 .claude/skills
+
+# Estudo local, fica fora do repositório (decisão do usuário em 01/10/2026)
+estudos/caso-07-design-system-e-empacotamento-desktop.md
