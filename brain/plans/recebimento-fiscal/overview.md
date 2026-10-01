@@ -18,3 +18,7 @@ fase final; público depois de auditoria). Pasta: `D:\PROJETOS\recebimento-fisca
 
 - 2026-10-01 — brainstorm concluído; usuário delegou as decisões (SQLite hoje, Python,
   recorte acima).
+- 2026-10-01 — fases 1–6 com PR (#1–#6) prontos, empilhados, em
+  `diaquinodev/recebimento-fiscal` (privado). 72 testes; CI verde em #1–#5. Evals: motor
+  480/480; OCR 22/22 campos fiscais (prompt v2); agente 12/12 (v3). Histórico auditado.
+  Pendente: merge (usuário) e decisão de tornar público. Estudo: `estudos/caso-09`.
