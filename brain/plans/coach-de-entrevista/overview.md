@@ -45,3 +45,6 @@ Teste ao vivo final: chamada com o irmão, fone, uma pergunta de cada tipo.
 - 2026-09-30 06:47 — chaves configuradas; chamadas reais OK (Groq 0,7 s; coach 3,9 s).
   Guarda contra números inventados (achado no teste real). Fase 7 (#7): pergunta marcada +
   modo estudo. Pendente: teste ao vivo com o irmão; merge #1–#7.
+- 2026-09-30 16:34 — repo renomeado para `diaquinodev/projeto-pessoal` (privado). Usuário
+  editou arquivos localmente (campo `vaga`, sem commit) e pediu para **não mexer**: PRs
+  #1–#7 ficam em draft até ele pedir para fechar.

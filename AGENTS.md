@@ -49,6 +49,7 @@ O revisor automático (CodeRabbit, plano gratuito) tem cota por hora. PRs são a
 
 - **Neste repositório (QG):** uma branch por sessão de trabalho (`sessao/AAAA-MM-DD`),
   um commit por assunto, **um único PR no fim da sessão** listando tudo o que mudou.
+  Antes de abrir esse PR, rode a skill `reflect` — os aprendizados entram no mesmo PR.
   O usuário faz o *Squash and merge*.
 - **Repositórios de projeto (código):** uma branch e um PR **por fase do plano**. Abra o
   PR como **draft**; marque *Ready for review* só quando a fase estiver pronta e com os
