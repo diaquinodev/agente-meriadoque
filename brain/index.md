@@ -19,5 +19,8 @@
 - [[principles/subtract-before-you-add]]
 - [[principles/prove-it-works]]
 
+## Codebase
+- [[codebase]]
+
 ## Plans
 - [[plans/index]]
