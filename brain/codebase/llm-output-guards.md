@@ -45,9 +45,8 @@ Aprendido no Recebimento Fiscal (caso 09):
   de formatação (modo JSON), contada à parte.
 - **Gravação/reprodução com id explícito** quando a mensagem tem imagem (bytes variam entre
   sistemas); CI roda evals de IA sem chave.
-- **Prazo total na origem da chamada, não só na tela.** Coach (2026-10-01): tela mostrou
-  "Gerando resposta… (222.0s)". Um `Promise.race` de 10 s no frontend só para de esperar; a
-  requisição segue viva. O limite precisa ficar onde a chamada é feita (AbortController /
-  `httpx` com deadline total), cobrindo timeout × tentativas × backoff. Ex.: `ia.py` do
-  Recebimento Fiscal (120 s × 3 + pausas) pode prender a tela por mais de 6 min.
+- **O prazo vale para a soma das tentativas, não para cada uma** (complementa o item do
+  socket pendurado acima). Timeout por tentativa × nº de tentativas + backoff = espera real:
+  `ia.py` do Recebimento Fiscal (120 s × 3 + pausas) pode prender a tela por mais de 6 min.
+  Definir um deadline único por operação. Pendência em `todos.md`.
 
