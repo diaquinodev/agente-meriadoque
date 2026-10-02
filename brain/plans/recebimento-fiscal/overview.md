@@ -26,3 +26,6 @@ fase final; público depois de auditoria). Pasta: `D:\PROJETOS\recebimento-fisca
   Fase 7 (PR #7, base `fase-6-tela`): banco por visitante, `requirements.txt` para o
   Streamlit Community Cloud, README com "Teste online". 73 testes. Pendente (usuário):
   merge #1→#7 e deploy em share.streamlit.io; conferir o link do README.
+- 2026-10-02 — **tudo na `main`** (#1 e #6 por squash; #2/#4 fechados, conteúdo no #6).
+  `main` idêntica ao testado; CI da `main` verde. Pendente: Streamlit apontar para `main`,
+  apagar `fase-2-match`, `fase-4-ocr` e depois `fase-7-publicacao`; testar o link público.

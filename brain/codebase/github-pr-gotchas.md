@@ -16,6 +16,9 @@ Regras de fluxo (quantos PRs, draft) ficam no `AGENTS.md`. Aqui ficam as armadil
     conflito. Conserto sem perda: na branch mais completa, `git merge -s ours origin/main`
     (conferir `git diff` vazio contra o testado), trocar a base para `main` e fechar os PRs
     intermediários com comentário.
+- **O botão de merge vem com o último tipo usado** [inferência]: depois de um squash, o
+  próximo PR já sugere "Squash and merge". No passo a passo, mandar o usuário ler o texto do
+  botão antes de clicar.
 - **CI de `pull_request` não roda enquanto o PR tem conflito**, e trocar a base (`edited`)
   não dispara a CI. Prova alternativa: `git diff` vazio contra uma branch já verde.
 - **Nunca apagar branch local antes de `gh pr view <n> --json state` = `MERGED`.**
