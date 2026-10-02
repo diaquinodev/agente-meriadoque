@@ -29,3 +29,7 @@ fase final; público depois de auditoria). Pasta: `D:\PROJETOS\recebimento-fisca
 - 2026-10-02 — **tudo na `main`** (#1 e #6 por squash; #2/#4 fechados, conteúdo no #6).
   `main` idêntica ao testado; CI da `main` verde. Pendente: Streamlit apontar para `main`,
   apagar `fase-2-match`, `fase-4-ocr` e depois `fase-7-publicacao`; testar o link público.
+- 2026-10-02 — **no ar:** https://recebimento-fiscal.streamlit.app (público, sem login).
+  Testado: 24 notas (6/12/6), parecer da nfe-002 com 5 ferramentas, aprovação registrada;
+  2ª aba começa vazia (banco por visitante). `fase-2-match`/`fase-4-ocr` apagadas.
+  Para automatizar: a tela fica num iframe; abrir `/~/+/` para clicar.
