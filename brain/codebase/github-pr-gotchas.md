@@ -11,6 +11,13 @@ Regras de fluxo (quantos PRs, draft) ficam no `AGENTS.md`. Aqui ficam as armadil
     ([changelog](https://github.blog/changelog/2020-05-19-pull-request-retargeting/)), mas
     há bug aberto em que ele fecha ([cli/cli#14223](https://github.com/cli/cli/issues/14223)).
     Não confiar no automático: trocar a base à mão primeiro.
+  - **Só mergear o PR cuja base é `main`.** Em 2026-10-02 (recebimento-fiscal) o #1 entrou
+    por squash e #3/#5/#7 foram mergeados nas branches intermediárias: #2/#4/#6 ficaram em
+    conflito. Conserto sem perda: na branch mais completa, `git merge -s ours origin/main`
+    (conferir `git diff` vazio contra o testado), trocar a base para `main` e fechar os PRs
+    intermediários com comentário.
+- **CI de `pull_request` não roda enquanto o PR tem conflito**, e trocar a base (`edited`)
+  não dispara a CI. Prova alternativa: `git diff` vazio contra uma branch já verde.
 - **Nunca apagar branch local antes de `gh pr view <n> --json state` = `MERGED`.**
   O usuário às vezes acha que fez o merge e faltou o "Confirm squash and merge".
 - **CodeRabbit (plano gratuito)** tem cota por hora; o aviso "Review limit reached" /
