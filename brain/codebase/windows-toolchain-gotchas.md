@@ -38,4 +38,10 @@ Máquina do usuário: Windows 10, PowerShell 5.1 + Git Bash, IDE Antigravity (fo
 - **Recarregamento no Electron (Main vs Renderer):** Recarregar a janela (F5 / Ctrl+R) só
   atualiza o processo Renderer (HTML/CSS/JS da tela). Alterações no processo Main (`main.js`,
   handlers IPC, backend) exigem fechar o processo Electron e iniciar novamente.
+- **Parênteses dentro de blocos `if (...)` no CMD fecham o bloco prematuramente:** No Windows
+  batch (`.bat`), qualquer `)` dentro de um bloco `if (...)` (mesmo em `echo (Coach): Conectada`)
+  é interpretado como o fechamento do bloco `if`. O CMD falha com `: foi inesperado neste momento.`
+  e encerra o script na hora, fazendo a janela abrir e fechar num piscar de olhos.
+  Solução: evitar parênteses literais dentro de blocos `(...)` no CMD (usar hífens: `echo [OK] OpenRouter - Coach`).
+
 
