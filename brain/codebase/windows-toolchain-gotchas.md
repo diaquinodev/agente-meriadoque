@@ -18,6 +18,10 @@ Máquina do usuário: Windows 10, PowerShell 5.1 + Git Bash, IDE Antigravity (fo
 - **Symlink exige admin:** `.claude/skills → .agents/skills` é uma junction,
   ignorada no git por ser específica da máquina.
 - **Scripts `sh`** (adaptadores do Noodle, hooks) rodam via Git Bash.
+- **PowerShell quebra as aspas do `gh ... --jq '"\(.x) ..."'`** (erro "unknown arguments").
+  Usar `--json campos | ConvertFrom-Json` e formatar no PowerShell.
+- **`NativeCommandError` em `git`/`pip` no PowerShell** é só texto no stderr (ex.: "Switched
+  to branch", aviso do pip); conferir o `exit code`, não a cor vermelha.
 - **Terminal Bash embaralha acentos** na saída; o arquivo gerado está correto. Conferir
   o arquivo, não a saída do terminal.
 - **Arquivo travado por processo em execução (`EPERM: unlink`):** No Windows, se o app

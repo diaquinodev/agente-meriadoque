@@ -20,5 +20,9 @@ Custaram tempo três vezes em 2026-10-01 (caso 09). Complementa
 - **Streamlit `@st.cache_resource` é um só para o servidor inteiro:** num link público,
   estado guardado ali (banco em memória, decisões) aparece para todos os visitantes. Estado
   por visitante vai em `st.session_state`; teste com dois `AppTest` seguidos (caso 09, fase 7).
+- **Streamlit Community Cloud lê `requirements.txt` antes de `pyproject.toml`** e trata o
+  `pyproject.toml` como Poetry. Projeto com setuptools: `requirements.txt` com uma linha `.`
+  e testar num venv limpo (`pip install -r requirements.txt`). O "Main file path" padrão é
+  `streamlit_app.py`; trocar para o arquivo real.
 - **Pipeline de shell:** `grep ... | head; echo $?` mostra o status do `head`, não do
   `grep`. Para auditoria, rodar o `grep` sozinho.

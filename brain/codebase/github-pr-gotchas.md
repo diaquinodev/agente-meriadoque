@@ -16,6 +16,9 @@ Regras de fluxo (quantos PRs, draft) ficam no `AGENTS.md`. Aqui ficam as armadil
     conflito. Conserto sem perda: na branch mais completa, `git merge -s ours origin/main`
     (conferir `git diff` vazio contra o testado), trocar a base para `main` e fechar os PRs
     intermediários com comentário.
+- **Repo de projeto com PRs empilhados: desligar o squash ao criar o repo**
+  (`gh repo edit <dono>/<repo> --enable-squash-merge=false --enable-rebase-merge=false`).
+  Assim só existe "Create a merge commit" e o erro de 2026-10-02 fica impossível.
 - **O botão de merge vem com o último tipo usado** [inferência]: depois de um squash, o
   próximo PR já sugere "Squash and merge". No passo a passo, mandar o usuário ler o texto do
   botão antes de clicar.
