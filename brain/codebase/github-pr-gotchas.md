@@ -7,6 +7,10 @@ Regras de fluxo (quantos PRs, draft) ficam no `AGENTS.md`. Aqui ficam as armadil
   - Ordem a cada merge: merge → **trocar a base do próximo PR para `main`** → só então
     apagar a branch. Apagar antes faz o GitHub **fechar** o próximo PR (aconteceu no
     Auditor, PR #2; recuperado recriando a branch e reabrindo). Ver caso-04.
+  - A doc diz que o GitHub redireciona o próximo PR ao apagar a branch pelo site
+    ([changelog](https://github.blog/changelog/2020-05-19-pull-request-retargeting/)), mas
+    há bug aberto em que ele fecha ([cli/cli#14223](https://github.com/cli/cli/issues/14223)).
+    Não confiar no automático: trocar a base à mão primeiro.
 - **Nunca apagar branch local antes de `gh pr view <n> --json state` = `MERGED`.**
   O usuário às vezes acha que fez o merge e faltou o "Confirm squash and merge".
 - **CodeRabbit (plano gratuito)** tem cota por hora; o aviso "Review limit reached" /
