@@ -55,6 +55,9 @@ O revisor automático (CodeRabbit, plano gratuito) tem cota por hora. PRs são a
   PR como **draft**; marque *Ready for review* só quando a fase estiver pronta e com os
   testes passando. Assim o CodeRabbit revisa uma vez, com tudo pronto.
 - Antes de apagar qualquer branch local, confirme que o PR está `MERGED`.
+- **Sempre que houver PR para o usuário fazer merge:** mande o link de cada PR e o passo a
+ passo do merge (botões, tipo de merge, ordem). Ele está decorando o processo; repita mesmo
+ que já tenha explicado antes.
 
 ## Onde fica cada coisa
 

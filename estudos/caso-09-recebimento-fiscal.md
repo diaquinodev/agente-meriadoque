@@ -20,6 +20,21 @@ o *3-way match* entre pedido de compra (SAP `ME21N`), recebimento (`MIGO`) e NF-
 | 4 | OCR de DANFE "fotografada" com Gemini + conferência em código | 22/22 campos fiscais (prompt v2) |
 | 5 | agente com function calling e travas de negócio | 12/12 pareceres válidos |
 | 6 | tela Streamlit com aprovação humana, README | AppTest de ponta a ponta |
+| 7 | publicação: repo público, banco por visitante, deploy no Streamlit Cloud | teste com 2 visitantes falhou antes e passou depois |
+
+### Publicação (2026-10-02) — o merge que deu errado e como consertar
+
+- **Auditoria antes de abrir o repositório:** busca de chaves em todas as versões do
+  histórico, arquivos `.env`/`.pem`/`.db` e arquivos grandes. Nada encontrado.
+- **Link público muda o desenho:** `st.cache_resource` guarda um objeto para o servidor
+  inteiro. Na máquina de uma pessoa isso não aparece; num link público, a aprovação de um
+  visitante apareceria para todos. Estado de cada pessoa vai em `st.session_state`.
+- **PRs empilhados:** cada fase nasce da anterior. Três erros juntos travaram a pilha: o
+  primeiro merge foi *squash* (o git deixa de reconhecer os commits), três PRs foram
+  mergeados antes do anterior (caíram em branches intermediárias) e os restantes ficaram em
+  conflito. O conserto não perdeu nada porque a última branch tinha o projeto inteiro:
+  `git merge -s ours` registra a `main` como incorporada sem mudar nenhum arquivo.
+- **Regra para decorar:** só mergeie o PR cuja base é `main`; leia o texto do botão verde.
 
 ## 3. Conceitos
 
