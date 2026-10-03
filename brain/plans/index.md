@@ -9,3 +9,4 @@
 - [[recebimento-fiscal/brief]]
 - [[recebimento-fiscal/overview]]
 - [[inteligencia-de-compra/brief]]
+- [[inteligencia-de-compra/overview]]
