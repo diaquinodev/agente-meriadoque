@@ -80,3 +80,17 @@ análise; cada fase deixa o projeto apresentável.
 
 - 2026-10-03 — brainstorm concluído e plano escrito. Projeto GCP criado pelo usuário.
   Pendente (usuário): instalar Power BI Desktop. Próximo: fase 0.
+- 2026-10-03 — **fase 0: dados servem (seguir com o caminho B).** `gcloud` 587.0.0 instalado;
+  login de usuário funciona no sandbox (`bq query` rodou da máquina). Fonte escolhida:
+  `basedosdados.br_mgi_compras_publicas.contratacao_item` (8.119.424 linhas, 4,29 GB) +
+  `catalogo_material`, `fornecedor`, `orgao`. Cobertura 2024–2025: código de catálogo ~93%,
+  preço e quantidade do resultado ~79%, unidade de medida 100%. Itens de material com código
+  e preço em 2024–2025: 3,4 milhões de linhas, 139.611 itens distintos, 3.368 órgãos.
+  Achados para Data Quality: `codigo_grupo` vem nulo na tabela de itens (grupo só pelo
+  catálogo); total de 2024 soma R$ 6,1 trilhões (linhas absurdas, até R$ 4,9 bi num item).
+  Recorte proposto (aguarda ok do usuário): grupos 75 (escritório, 186.618 linhas), 70 (TIC,
+  77.674) e 79 (limpeza, 72.750), anos 2024–2025 — "compras indiretas". `INFORMATION_SCHEMA`
+  do projeto `basedosdados` não é acessível; usar `bq ls`/`bq show`. No Windows, `bq.cmd` falha
+  a partir do Git Bash (espaço no caminho) e o pipe do PowerShell injeta BOM: rodar com
+  `cmd /c "bq query ... < arquivo.sql"`. Pendente: confirmar recorte, criar o repo (fase 1) e
+  levar as consultas da fase 0 para `docs/fase-0-validacao.md`.
