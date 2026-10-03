@@ -94,3 +94,20 @@ análise; cada fase deixa o projeto apresentável.
   a partir do Git Bash (espaço no caminho) e o pipe do PowerShell injeta BOM: rodar com
   `cmd /c "bq query ... < arquivo.sql"`. Pendente: confirmar recorte, criar o repo (fase 1) e
   levar as consultas da fase 0 para `docs/fase-0-validacao.md`.
+- 2026-10-03 — **fases 1–7 escritas, PRs draft #1–#7 empilhados** em
+  `diaquinodev/inteligencia-de-compra` (privado). Usuário autorizou executar até o fim.
+  Ordem real das fases mudou: 3 modelo, 4 análises, 5 qualidade (os testes leem a fato e os
+  marts). Resultado: 18 tabelas recriadas do zero em ~1 min (~650 MiB estimados); fato com
+  334.901 linhas e R$ 15,8 bi; 11/11 testes de qualidade; 5 regras falham com 3 erros
+  plantados; 10 testes do executor; ruff, mypy e sqlfluff limpos na máquina. Economia: teto
+  R$ 2.269,8 mi, conservadora R$ 1.074,9 mi, defensável R$ 263,7 mi (grupos de preço
+  homogêneo, p75 ≤ 2 × p25). Achados: 30.238 serviços com código de material (R$ 13,7 bi);
+  cabeçalho de contratação repetido duplicava 269 linhas na fato (pego pelo teste de totais);
+  dry run não devolve bytes para tabelas particionadas por ano (o teto fica com
+  `maximum_bytes_billed`).
+  **Pendências (usuário):** (1) CI não disparou nos PRs — nenhum workflow registrado no
+  repositório após abrir os PRs; investigar em Settings → Actions; (2) instalar Power BI
+  Desktop, montar o painel por `powerbi/roteiro.md`, conferir a tabela de `medidas.md` (o DAX
+  não foi executado), publicar; (3) merge dos PRs **em ordem, #1 primeiro, sempre o que tem
+  base `main`**; (4) auditoria do histórico e tornar público; (5) pin no perfil e LinkedIn.
+  Planos seguintes: padronização por IA, Agente Auditor, pipeline agendado/dbt.

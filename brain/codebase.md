@@ -6,3 +6,4 @@
 - [[codebase/web-frontend-gotchas]]
 - [[codebase/code-editing-gotchas]]
 - [[codebase/agent-tool-portability]]
+- [[codebase/bigquery-gotchas]]
