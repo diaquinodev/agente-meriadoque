@@ -8,3 +8,4 @@
 - [[dashboard-precificacao/overview]]
 - [[recebimento-fiscal/brief]]
 - [[recebimento-fiscal/overview]]
+- [[inteligencia-de-compra/brief]]
