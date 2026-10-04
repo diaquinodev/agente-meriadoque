@@ -7,3 +7,4 @@
 - [[codebase/code-editing-gotchas]]
 - [[codebase/agent-tool-portability]]
 - [[codebase/bigquery-gotchas]]
+- [[codebase/powerbi-as-code]]

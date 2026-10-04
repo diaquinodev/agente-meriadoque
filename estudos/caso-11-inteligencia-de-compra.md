@@ -20,8 +20,8 @@ com o Recebimento Fiscal (mesmo processo de compras) e com o alvo de empresas gr
 | 3 | modelo estrela | fato = camada limpa em linhas e em R$ |
 | 4 | três análises | números do README saem das tabelas `mart_` |
 | 5 | testes de qualidade | 11 de 11; 5 falham com 3 erros plantados |
-| 6 | medidas DAX e roteiro do painel | pendente: montar no Power BI |
-| 7 | README | pendente: link do painel e publicação |
+| 6 | painel do Power BI gerado por código | 23 de 23 valores conferem com o BigQuery; 14 testes novos |
+| 7 | README com as imagens do painel | pendente: merge e publicação |
 
 Comandos que valem decorar:
 
@@ -32,6 +32,24 @@ python -m compras construir            # recria as 18 tabelas
 python -m compras construir --estimar  # só estima o custo
 python -m compras testar               # 11 testes de qualidade
 ```
+
+### Painel como código (2026-10-04)
+
+O painel não foi montado clicando. Um script gera os arquivos do projeto do Power BI a partir
+de três fontes em texto (medidas, páginas, tema); outro abre o projeto, carrega os dados e
+compara os números com o BigQuery.
+
+```
+python -m compras painel        # gera o projeto (PBIP)
+python -m compras esperado      # valores de referência, calculados no BigQuery
+powerbi\scripts\abrir.ps1       # abre no Power BI e carrega os dados
+powerbi\scripts\conferir.ps1    # compara painel x BigQuery: 23 de 23
+powerbi\scripts\capturar.ps1    # imagem de cada página
+```
+
+O que os testes pegaram antes de qualquer pessoa ver o painel: uma medida que não terminava
+de calcular, uma participação que daria 100% entre os "15 maiores" e um script que travava o
+Power BI.
 
 ## 3. Conceitos
 
@@ -53,6 +71,13 @@ python -m compras testar               # 11 testes de qualidade
 - **Curva ABC** — A: poucos fornecedores com 80% do gasto; C: muitos com 5%.
 - **HHI** — soma dos quadrados das participações; mede concentração de mercado.
 - **Teste de qualidade** — consulta que deve voltar vazia; cada linha devolvida é um erro.
+- **PBIP / TMDL / PBIR** — o painel do Power BI salvo como pasta de arquivos de texto:
+  TMDL descreve o modelo e as medidas; PBIR descreve páginas e visuais. Analogia: a planta
+  da casa em papel, em vez da casa pronta; dá para revisar, copiar e reconstruir.
+- **Painel como código** — gerar o painel por script e testar por programa, como se faz
+  com qualquer software.
+- **Conferência independente** — calcular o mesmo número por dois caminhos (DAX e SQL) e
+  comparar. Se batem, os dois estão certos ou erram igual, o que é bem mais raro.
 
 ## 4. Por que assim
 
@@ -101,6 +126,9 @@ python -m compras testar               # 11 testes de qualidade
 6. O que acontece se "sem estimativa de custo" for tratado como custo zero?
 7. Por que manter as linhas excluídas com o motivo, em vez de apagá-las?
 8. O que um HHI de 197 diz sobre os fornecedores de informática?
+9. Por que gerar o painel por script, se montar à mão é mais rápido da primeira vez?
+10. Por que `ALLSELECTED` dá a participação errada num visual com filtro de "N maiores"?
+11. O que torna a conferência dos números "independente", e por que isso importa?
 
 ## 8. Referências
 

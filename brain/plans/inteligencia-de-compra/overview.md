@@ -111,3 +111,16 @@ análise; cada fase deixa o projeto apresentável.
   não foi executado), publicar; (3) merge dos PRs **em ordem, #1 primeiro, sempre o que tem
   base `main`**; (4) auditoria do histórico e tornar público; (5) pin no perfil e LinkedIn.
   Planos seguintes: padronização por IA, Agente Auditor, pipeline agendado/dbt.
+- 2026-10-04 — **CI resolvido:** o workflow só foi registrado quando o `ci.yml` chegou à
+  `main` (merge do PR #1). PRs #1–#4 e #8 na `main` (o #5 entrou por engano em
+  `fase-4-analises`; o #8 levou o conteúdo para a `main`).
+- 2026-10-04 — **fase 6 refeita como "painel como código"** a pedido do usuário (ele já sabe
+  montar à mão; quer processo automatizado, documentado e testado). `python -m compras painel`
+  gera o PBIP (30 medidas, tema, 3 páginas); `esperado` calcula os valores no BigQuery;
+  `powerbi/scripts/abrir.ps1`, `conferir.ps1` e `capturar.ps1` abrem, conferem e capturam sem
+  cliques. Resultado: 23 de 23 valores conferem com o BigQuery; 24 testes no CI (14 novos);
+  imagens das 3 páginas em `docs/img/`. PR #6 pronto para revisão (base `main`), CI verde.
+  PR #7 (README com o painel) continua draft, base `fase-6-powerbi`.
+  **Pendências (usuário):** merge do #6 e depois do #7 (conferir "into main"); decidir se
+  publica o painel no serviço do Power BI; auditoria do histórico e tornar público; trocar a
+  senha da conta de estudante exposta no chat. O `.pbix` montado à mão ficou fora do git.
