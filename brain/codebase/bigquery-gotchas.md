@@ -25,12 +25,13 @@ Aprendido no projeto inteligencia-de-compra (2026-10-03). Ver caso-11.
 - **Heredoc longo no Bash da ferramenta falha** com "unexpected EOF" antes de executar
   qualquer linha. Para vários arquivos, gravar com a ferramenta de escrita ou com um script
   Python salvo em arquivo. Ver [[codebase/windows-toolchain-gotchas]].
-- **GitHub Actions não disparou** em repositório privado recém-criado com PRs abertos em
-  seguida (nenhum workflow registrado). Já descartado: push de 8 branches de uma vez (um push
-  posterior alterando o `ci.yml` não registrou nada), YAML inválido, Actions desligado no
-  repositório (API diz `enabled: true`), fechar e reabrir o PR. O mesmo padrão funcionou no
-  `recebimento-fiscal` privado em 2026-10-01; repositórios públicos da conta rodam normal.
-  Suspeita: cota ou cobrança de Actions para repositórios privados. Os passos
-  do CI foram rodados num clone limpo como substituto.
+- **GitHub Actions só registrou o workflow quando o arquivo chegou à `main`.** No
+  inteligencia-de-compra (privado, 2026-10-03/04) os PRs empilhados não geraram nenhuma
+  execução enquanto o `ci.yml` existia só nas branches das fases (0 workflows, aba Actions em
+  "Get started"). Não era cota (15/2.000 min), YAML, push de várias branches nem Actions
+  desligado. Ao mesclar o PR #1 na `main`, o push rodou o CI na hora; fechar e reabrir o PR
+  seguinte passou a disparar também. Causa de fundo não confirmada (o mesmo padrão funcionou
+  no recebimento-fiscal em 2026-10-01). Prática: pôr o `ci.yml` no commit inicial da `main`;
+  mudar a base de um PR não dispara CI — fechar e reabrir, ou confiar no CI da `main`.
 
 Related: [[codebase/llm-output-guards]], [[principles/prove-it-works]]
