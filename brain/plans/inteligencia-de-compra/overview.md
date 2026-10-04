@@ -124,3 +124,8 @@ análise; cada fase deixa o projeto apresentável.
   **Pendências (usuário):** merge do #6 e depois do #7 (conferir "into main"); decidir se
   publica o painel no serviço do Power BI; auditoria do histórico e tornar público; trocar a
   senha da conta de estudante exposta no chat. O `.pbix` montado à mão ficou fora do git.
+- 2026-10-04 — PRs #6 e #7 na `main` (usuário). **Fase 8, redesenho do painel:** hierarquia
+  com um número em destaque por página, uma cor de dado validada, área para o tempo, tabela
+  para as três estimativas, `powerbi/DESIGN.md`. 23 de 23 valores conferem; 30 testes.
+  PR #9 pronto (base `main`, CI verde). Pendente (usuário): merge do #9; decidir publicação
+  do painel e tornar o repositório público (auditoria do histórico antes).

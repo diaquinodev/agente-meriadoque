@@ -36,5 +36,14 @@ Aprendido no inteligencia-de-compra (2026-10-04). Fluxo e scripts em `powerbi/` 
 - **Palavra-chave em comentário quebra parser ingênuo:** cortar o `.dax` em `IndexOf("EVALUATE")`
   falhou quando um comentário passou a citar EVALUATE; usar `(?m)^EVALUATE`.
 
+- **Design do painel (2026-10-04):** carregar a skill `dataviz` antes de escolher cores e rodar
+  o validador de paleta. Com gráficos de uma série, uma cor só; verde e âmbar são cores de
+  estado e a dupla ficou abaixo do alvo de daltonismo (6,8 < 8). Um número em destaque por
+  página. Nove valores de escalas diferentes leem melhor em tabela que em colunas agrupadas.
+  O que os testes não pegam e só a captura mostra: texto cortado em caixa de texto (margem
+  interna do tema), filtro cortado, rótulo dentro da barra sem contraste. No tema do Power
+  BI: `labels.labelPosition = "OutsideEnd"`, `categoryAxis.innerPadding`, eixos e grade por
+  tipo de visual em `visualStyles`.
+
 Related: [[codebase/bigquery-gotchas]], [[principles/prove-it-works]],
 [[principles/encode-lessons-in-structure]]
