@@ -26,7 +26,11 @@ Aprendido no projeto inteligencia-de-compra (2026-10-03). Ver caso-11.
   qualquer linha. Para vários arquivos, gravar com a ferramenta de escrita ou com um script
   Python salvo em arquivo. Ver [[codebase/windows-toolchain-gotchas]].
 - **GitHub Actions não disparou** em repositório privado recém-criado com PRs abertos em
-  seguida (nenhum workflow registrado, nem após novo push). Causa não identificada; os passos
+  seguida (nenhum workflow registrado). Já descartado: push de 8 branches de uma vez (um push
+  posterior alterando o `ci.yml` não registrou nada), YAML inválido, Actions desligado no
+  repositório (API diz `enabled: true`), fechar e reabrir o PR. O mesmo padrão funcionou no
+  `recebimento-fiscal` privado em 2026-10-01; repositórios públicos da conta rodam normal.
+  Suspeita: cota ou cobrança de Actions para repositórios privados. Os passos
   do CI foram rodados num clone limpo como substituto.
 
 Related: [[codebase/llm-output-guards]], [[principles/prove-it-works]]
