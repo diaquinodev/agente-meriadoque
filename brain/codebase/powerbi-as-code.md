@@ -79,6 +79,9 @@ Aprendido no inteligencia-de-compra (2026-10-04). Fluxo e scripts em `powerbi/` 
   lugar de R$ 16 Bi: havia uma seleção ativa num visual da janela aberta (causa não
   confirmada; possivelmente um clique na janela). Reabrir o projeto antes de capturar
   imagem que vai para o README.
+- **Defeito visto na conferência da imagem é defeito a corrigir.** Na fase 9 o corte no
+  meio do cartão apareceu na revisão e foi aceito como "limite do recorte"; o usuário
+  encontrou no README. Imagem de portfólio só sai quando nada está cortado.
 
 Related: [[codebase/bigquery-gotchas]], [[principles/prove-it-works]],
 [[principles/encode-lessons-in-structure]]
