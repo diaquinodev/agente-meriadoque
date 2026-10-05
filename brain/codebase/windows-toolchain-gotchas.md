@@ -1,13 +1,15 @@
 # Windows toolchain gotchas
 
-Máquina do usuário: Windows 10, PowerShell 5.1 + Git Bash, IDE Antigravity (fork do VS Code).
+Máquina do usuário: Windows 10, PowerShell 5.1 + Git Bash, IDEs Antigravity e Cursor (forks do VS Code; ver
+[[codebase/agent-tool-portability]]).
 
 - **npm bloqueia scripts de pós-instalação.** Pacotes que baixam binário no `postinstall`
   ficam quebrados em silêncio. Aconteceu com `@anthropic-ai/claude-code` e com `electron`.
   Correção: `node node_modules/<pacote>/install.js` (só para pacote confiável). Ver caso-05.
 - **`ELECTRON_RUN_AS_NODE=1`** vem herdado do terminal do Antigravity/VS Code: o Electron
   abre como Node, sem janela. Rodar `Remove-Item Env:ELECTRON_RUN_AS_NODE` antes de
-  `npm start`. Ver caso-05.
+  `npm start`. Ver caso-05. No terminal do agente do Cursor a variável veio vazia (2026-10-02);
+  o terminal aberto pelo menu não foi conferido.
 - **CRLF:** arquivo gravado em modo texto no Windows ganha `\r\n`. Para dados
   reprodutíveis, gravar com `newline="\n"` e fixar `eol=lf` no `.gitattributes`. Ver caso-04.
 - **Gerar código-fonte via script Python (heredoc) corrompe escapes:** `\n` dentro de
@@ -22,6 +24,8 @@ Máquina do usuário: Windows 10, PowerShell 5.1 + Git Bash, IDE Antigravity (fo
   Usar `--json campos | ConvertFrom-Json` e formatar no PowerShell.
 - **`NativeCommandError` em `git`/`pip` no PowerShell** é só texto no stderr (ex.: "Switched
   to branch", aviso do pip); conferir o `exit code`, não a cor vermelha.
+- **`powershell -File script.ps1 -Lista "a","b"`** entrega a lista como um texto só
+  ("a,b"). Para passar vários valores, chamar com `& script.ps1 -Lista @("a","b")`.
 - **Terminal Bash embaralha acentos** na saída; o arquivo gerado está correto. Conferir
   o arquivo, não a saída do terminal.
 - **Arquivo travado por processo em execução (`EPERM: unlink`):** No Windows, se o app

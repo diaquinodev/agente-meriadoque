@@ -147,7 +147,7 @@ Per prove-it-works: "it compiles" is not verification. Every phase must describe
 
 Update `brain/plans/index.md` with a wikilink to the new plan's overview.
 
-Do NOT edit `brain/index.md` — the auto-index hook maintains it automatically.
+Do NOT edit `brain/index.md` — it already links `[[plans/index]]` and is curated by hand (there is no working auto-index hook; see `brain/codebase/agent-tool-portability.md`).
 
 ## Step 8 — Present to User
 
