@@ -45,5 +45,24 @@ Aprendido no inteligencia-de-compra (2026-10-04). Fluxo e scripts em `powerbi/` 
   BI: `labels.labelPosition = "OutsideEnd"`, `categoryAxis.innerPadding`, eixos e grade por
   tipo de visual em `visualStyles`.
 
+- **"Uma cor só" vale para os dados, não para a página (2026-10-04).** O painel com uma cor
+  para tudo foi recusado pelo usuário como genérico. Duas camadas: cor de identidade da área
+  na estrutura (faixa do cabeçalho, cartão principal, cabeçalho de tabela, 5 a 10% nos
+  neutros) e cor de dado só nos gráficos. Hierarquia por tamanho de fonte com degraus de 20%
+  ou mais. Cores de dado pouco saturadas reprovam no validador ("lê como cinza").
+- **Layout de celular em PBIR:** arquivo `mobile.json` ao lado do `visual.json`, esquema
+  `visualContainerMobileState`, com `position` (tela de 320 de largura) e, opcionalmente,
+  `objects` / `visualContainerObjects` só para o celular. Funcionou sobrescrever tamanho de
+  fonte de cartão, parágrafos de caixa de texto e `titleWrap` do título. Visual sem
+  `mobile.json` não aparece no celular. Coluna de tabela não dá para esconder por layout.
+- **Ver o layout de celular por script:** botões "Layout móvel" e "Layout da área de
+  trabalho" via `InvokePattern`. Para rolar a tela do celular, `ScrollPattern` não alcança;
+  `ScrollItemPattern.ScrollIntoView()` no elemento com o título do visual funciona.
+- **Recorte da captura:** achar a página pela cor de fundo falha (a mesma cor aparece fora
+  da página). Usar um visual de cor única e posição conhecida (a faixa do cabeçalho) para
+  tirar escala e canto. A dica da aba selecionada fica por cima da margem inferior.
+- **Rótulo de cartão corta sem avisar** quando passa da largura; no celular, em cartões em
+  par (148 de largura), cabem cerca de 16 a 19 letras a 9 pt.
+
 Related: [[codebase/bigquery-gotchas]], [[principles/prove-it-works]],
 [[principles/encode-lessons-in-structure]]

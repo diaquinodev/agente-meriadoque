@@ -129,3 +129,9 @@ análise; cada fase deixa o projeto apresentável.
   para as três estimativas, `powerbi/DESIGN.md`. 23 de 23 valores conferem; 30 testes.
   PR #9 pronto (base `main`, CI verde). Pendente (usuário): merge do #9; decidir publicação
   do painel e tornar o repositório público (auditoria do histórico antes).
+- 2026-10-04 — **Fase 9, temas e celular** (pedido do usuário: o painel da fase 8 ficou
+  "genérico, muito neutro"; quer cor e hierarquia por área de negócio e layout de celular).
+  Cinco temas por área (identidade + dado), escala de seis tamanhos de fonte, `mobile.json`
+  por visual, `capturar.ps1 -Celular`. 23 de 23 valores conferem; 44 testes. PR #10 pronto
+  (base `main`, CI verde), empilhado sobre o #9. Pendente (usuário): merge do #9 e depois do
+  #10. Não feito: galeria comparando temas, ênfase por barra, skill de design no QG.
