@@ -27,6 +27,7 @@ Aprendido no Auditor de Repasses e no Coach de Entrevista. Relaciona com
   o processo fica pendurado por até 240s (timeout TCP do SO). Solução em duas camadas:
   (1) `AbortSignal.timeout(ms)` no cliente HTTP do backend com retry/fallback;
   (2) `Promise.race` com timeout máximo (ex: 10s) na interface para garantir que a UI nunca trave.
+- **OpenAI JSON mode exige a palavra 'json' nas mensagens:** Na OpenRouter, ao enviar `response_format: { type: "json_object" }` para modelos da OpenAI (`gpt-4o-mini`, `gpt-4.1-nano`), a requisição falha com `HTTP 400: 'messages' must contain the word 'json'` se as mensagens não contiverem a palavra "json". Em pings/warmups que medem apenas latência, desativar `json_object` (`jsonMode: false`) para não quebrar a checagem com erro 400.
 
 
 Aprendido no Recebimento Fiscal (caso 09):

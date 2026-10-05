@@ -10,3 +10,5 @@
 - [[recebimento-fiscal/overview]]
 - [[inteligencia-de-compra/brief]]
 - [[inteligencia-de-compra/overview]]
+- [[meriadoque-telegram-bot/brief]]
+- [[meriadoque-telegram-bot/overview]]

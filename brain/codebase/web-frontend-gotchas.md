@@ -24,3 +24,10 @@ Aprendido no dashboard de precificação (caso 08). Relaciona com [[principles/p
   links de planilha e chaves (o histórico inteiro, não só os arquivos). GitHub Pages no plano
   gratuito exige repo público; liga com
   `gh api -X POST repos/<dono>/<repo>/pages -f "source[branch]=main" -f "source[path]=/"`.
+- **Electron renderer (sandbox) não resolve pacotes npm sem bundler:** Na janela do Electron com
+  `contextIsolation: true` e `sandbox: true`, scripts rodando no navegador (`<script type="module">`)
+  não conseguem importar pacotes como `import { z } from "zod"` diretamente via ES Modules
+  (`Uncaught TypeError: Failed to resolve module specifier "zod"`). O `node --test` passa porque
+  roda no Node, mas o navegador quebra na linha 0 e a tela congela silenciosamente em "carregando...".
+  Módulos compartilhados entre main e renderer devem ser JavaScript puro sem dependências externas;
+  validações de schema Zod devem ficar confinadas no processo `main` ou em arquivos exclusivos de backend.
