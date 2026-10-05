@@ -64,5 +64,10 @@ Aprendido no inteligencia-de-compra (2026-10-04). Fluxo e scripts em `powerbi/` 
 - **Rótulo de cartão corta sem avisar** quando passa da largura; no celular, em cartões em
   par (148 de largura), cabem cerca de 16 a 19 letras a 9 pt.
 
+- **Entrega visual: perguntar antes, não decidir sozinho (2026-10-04).** A fase 8 foi
+  desenhada sem briefing e refeita na fase 9. Antes de desenhar um painel, levantar: área
+  de negócio, quem lê, tom (sóbrio ou vibrante), referência visual e se precisa de celular.
+  Mostrar a primeira captura cedo, antes de polir e documentar.
+
 Related: [[codebase/bigquery-gotchas]], [[principles/prove-it-works]],
 [[principles/encode-lessons-in-structure]]

@@ -24,6 +24,8 @@ Máquina do usuário: Windows 10, PowerShell 5.1 + Git Bash, IDEs Antigravity e 
   Usar `--json campos | ConvertFrom-Json` e formatar no PowerShell.
 - **`NativeCommandError` em `git`/`pip` no PowerShell** é só texto no stderr (ex.: "Switched
   to branch", aviso do pip); conferir o `exit code`, não a cor vermelha.
+- **`powershell -File script.ps1 -Lista "a","b"`** entrega a lista como um texto só
+  ("a,b"). Para passar vários valores, chamar com `& script.ps1 -Lista @("a","b")`.
 - **Terminal Bash embaralha acentos** na saída; o arquivo gerado está correto. Conferir
   o arquivo, não a saída do terminal.
 - **Arquivo travado por processo em execução (`EPERM: unlink`):** No Windows, se o app

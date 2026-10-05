@@ -51,6 +51,29 @@ O que os testes pegaram antes de qualquer pessoa ver o painel: uma medida que n�
 de calcular, uma participação que daria 100% entre os "15 maiores" e um script que travava o
 Power BI.
 
+### Design do painel: duas rodadas (2026-10-04)
+
+O painel foi redesenhado duas vezes, e a segunda existiu por causa de um erro da primeira.
+
+1. **Fase 8: uma cor só.** Um validador de paleta reprovou a combinação azul, verde e
+   âmbar (difícil para daltônicos; verde e âmbar leem como "bom" e "atenção"). A correção
+   foi usar uma cor para todos os gráficos. Certo para os gráficos, mas a regra foi levada
+   para a página inteira: cabeçalho, cartões e fundo ficaram cinza. O resultado foi
+   recusado como "genérico, muito neutro".
+2. **Fase 9: duas camadas de cor.** A **cor de identidade** da área de negócio vai na
+   estrutura (faixa do cabeçalho, número principal). A **cor de dado** fica só nos
+   gráficos. Cinco temas por área (compras, financeiro, vendas, pessoas, operações),
+   escolhidos por `--tema`. A hierarquia vem do **tamanho da fonte**, em seis níveis com
+   degraus de pelo menos 20%.
+3. **Celular.** O Power BI guarda uma posição por visual para a tela de celular (arquivo
+   `mobile.json`). O gerador escreve esse arquivo: uma coluna, na mesma ordem de leitura.
+4. **Testes de design.** Contraste de cada tema (fórmula da WCAG: 4,5:1 para texto, 3:1
+   para marcas), escala de tamanhos, e layout de celular sem sobreposição. O que o teste não
+   pega (texto cortado) apareceu nas capturas de tela, que também são feitas por script.
+
+A lição de processo: design é gosto e contexto. Perguntar antes (área, público, tom,
+referência) custa uma mensagem; desenhar sozinho custou uma fase inteira.
+
 ## 3. Conceitos
 
 - **Spend analytics** — análise do gasto de uma organização: com quem, em quê e a que preço.
@@ -129,6 +152,10 @@ Power BI.
 9. Por que gerar o painel por script, se montar à mão é mais rápido da primeira vez?
 10. Por que `ALLSELECTED` dá a participação errada num visual com filtro de "N maiores"?
 11. O que torna a conferência dos números "independente", e por que isso importa?
+12. Por que "uma série, uma cor" é uma boa regra para gráficos e uma má regra para a página?
+13. Qual a diferença entre cor de identidade e cor de dado? Onde cada uma aparece?
+14. Por que verde e âmbar ficaram fora da paleta de barras?
+15. O que o teste de contraste garante, e o que só a captura de tela mostra?
 
 ## 8. Referências
 
