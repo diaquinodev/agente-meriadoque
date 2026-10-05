@@ -19,6 +19,12 @@ Regras de fluxo (quantos PRs, draft) ficam no `AGENTS.md`. Aqui ficam as armadil
 - **Repo de projeto com PRs empilhados: desligar o squash ao criar o repo**
   (`gh repo edit <dono>/<repo> --enable-squash-merge=false --enable-rebase-merge=false`).
   Assim só existe "Create a merge commit" e o erro de 2026-10-02 fica impossível.
+- **QG: a branch da sessão nasce da `main` atualizada, nunca da branch da sessão anterior.**
+  Depois de um *Squash and merge*, a branch antiga tem commits que a `main` já contém com
+  outro identificador; uma branch nova criada em cima dela conflita com a `main` (aconteceu
+  nos PRs #12 e #13, em arquivos de índice). Início de sessão:
+  `git fetch origin && git switch -c sessao/AAAA-MM-DD origin/main`. Se já nasceu torta:
+  `git merge origin/main`, manter os dois lados nos índices, conferir e seguir.
 - **O botão de merge vem com o último tipo usado** [inferência]: depois de um squash, o
   próximo PR já sugere "Squash and merge". No passo a passo, mandar o usuário ler o texto do
   botão antes de clicar.

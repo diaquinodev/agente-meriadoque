@@ -8,3 +8,4 @@
 - [[codebase/agent-tool-portability]]
 - [[codebase/bigquery-gotchas]]
 - [[codebase/powerbi-as-code]]
+- [[codebase/notion-and-youtube-connectors]]
