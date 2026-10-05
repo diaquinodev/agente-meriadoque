@@ -140,3 +140,4 @@ Não há lint nem teste: não há código. A prova é de uso, lida direto na fon
 ## Status
 
 - 2026-10-05 — brief e plano escritos. Nada executado.
+- 2026-10-05 — Fluxo simplificado a pedido do usuário: um arquivo de `estudos/` por semana, uma lição por dia; o agente escreve o prompt do dia, o NotebookLM gera a aula, o Notion registra. Criadas 5 lições do caso 11 no banco Lições (06 a 10/10), cada uma com o prompt do dia. As 6 lições genéricas antigas continuam lá (não apagadas). Pendente (usuário): criar o caderno do caso 11 no NotebookLM, colar o prompt mestre, fazer a lição de 06/10.
