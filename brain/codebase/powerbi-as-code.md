@@ -69,5 +69,16 @@ Aprendido no inteligencia-de-compra (2026-10-04). Fluxo e scripts em `powerbi/` 
   de negócio, quem lê, tom (sóbrio ou vibrante), referência visual e se precisa de celular.
   Mostrar a primeira captura cedo, antes de polir e documentar.
 
+- **Captura do celular, armadilhas (2026-10-05):** recorte de altura fixa corta cartão ao
+  meio; cortar no fim do último visual que cabe inteiro (posições do `mobile.json`). A tela
+  de celular pode abrir **rolada para baixo**: rolar até o primeiro texto da faixa com
+  `ScrollItemPattern` antes de capturar. Com a aba Exibição ativa há **dois botões "Layout
+  móvel"** (faixa de opções, só `TogglePattern`; barra de status, `InvokePattern`): filtrar
+  pelo padrão aceito. Botão desabilitado = a janela já está nesse layout.
+- **Conferir o número na imagem, não só o recorte.** Uma captura saiu com R$ 537 Mi no
+  lugar de R$ 16 Bi: havia uma seleção ativa num visual da janela aberta (causa não
+  confirmada; possivelmente um clique na janela). Reabrir o projeto antes de capturar
+  imagem que vai para o README.
+
 Related: [[codebase/bigquery-gotchas]], [[principles/prove-it-works]],
 [[principles/encode-lessons-in-structure]]
