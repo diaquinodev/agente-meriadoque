@@ -13,3 +13,4 @@
 - [[meriadoque-telegram-bot/brief]]
 - [[meriadoque-telegram-bot/overview]]
 - [[coach-de-estudos/brief]]
+- [[coach-de-estudos/overview]]
