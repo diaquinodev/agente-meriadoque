@@ -24,6 +24,12 @@ Ask (a few at a time, not a questionnaire dump):
 - Is it a personal project, portfolio piece, or both? (Portfolio → favor clarity,
   README, demo-ability.)
 
+**Before proposing anything, look for what already exists** — `brain/plans/`, `estudos/`,
+and the user's connected tools (Notion, etc.) — and check whether it was *used*, not just
+whether it exists. An unused earlier attempt means the problem is not a missing tool: say
+so, and start from what is there instead of building a second one. (2026-10-05: a study
+panel built four days earlier had zero diary entries; it was found only at plan time.)
+
 ## 2. Challenge
 
 - Point out weak assumptions and risks directly.
