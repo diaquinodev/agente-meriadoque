@@ -1,0 +1,27 @@
+# Estúdio de Fotos para Marketplace
+
+- Problem: sellers individuais e pequenas marcas de moda precisam produzir galerias comerciais rapidamente sem perder a fidelidade da peça real.
+- Users: pequenas marcas de moda feminina primeiro; vendedores individuais depois.
+- Product promise: gerar imagens comerciais em escala preservando cor, estampa, corte, tecido, acabamento e detalhes da peça.
+- MVP scope (in): três sessões independentes — Fotos com Modelo, Still em manequim fantasma e Kits para capas quadradas.
+- Fotos com Modelo: aceitar referências no chão, cabide ou corpo; frente obrigatória; costas e detalhes recomendados; gerar teste e pacotes de 3, 5 ou 10 fotos com propósito definido.
+- Session identity lock: após aprovar o teste, manter idênticos rosto, corpo, pele, cabelo, maquiagem e idade aparente da modelo; variar apenas pose, expressão, câmera, enquadramento, movimento e ambiente previsto.
+- Model configuration: separar identidade (pele, idade aparente, corpo, altura, tamanho, cabelo) de styling (penteado, maquiagem, óculos, joias e calçados), com controles progressivos para não sobrecarregar o seller.
+- Inclusive casting: oferecer modelos regulares, mid-size e plus-size; relacionar o corpo ao tamanho real vestido pela modelo sem assumir equivalência universal entre numerações de marcas.
+- Shot sequence: capa frontal, lateral, costas verificadas ou ângulo 3/4, close comercial, movimento editorial, caimento natural, detalhe principal, proporção completa, uso contextual e capa alternativa.
+- Photo direction: Comercial Segura, Editorial Minimalista, Passarela, Urbano Confiante, Resort de Verão e Fashion Ousado são presets dentro de Fotos com Modelo, não novas sessões.
+- Scene library: iniciar com Estúdio Neutro, Parede Texturizada, Luz de Janela, Arquitetura Minimalista, Urbano Sofisticado e Bangalô de Verão; seller escolhe paleta e textura dentro de limites curados.
+- Still: gerar somente vista frontal da peça com volume tridimensional de manequim fantasma, sem pessoa, cabide ou cenário editorial.
+- Kits: reunir várias peças ou cores em uma capa `1200 x 1200`, com opções de corpo inteiro, close e composição sobreposta; validar quantidade, identidade e cor de cada item.
+- Fidelity rule: não apresentar costas como verificadas sem referência traseira; substituir por ângulo 3/4 ou solicitar nova referência.
+- Fabric rule: não exigir escolha manual; extrair apenas propriedades visuais observáveis como textura, brilho, espessura, transparência e caimento, sem inventar composição têxtil.
+- Supporting look: classificar o produto como top, bottom, conjunto, vestido/macacão, casaco ou kit; completar o look com peças neutras que não ocultem nem disputem atenção com o produto principal.
+- Prompt hierarchy: priorizar peça, escopo do produto e identidade da modelo; acessórios, cenário e pose devem ser simplificados antes de qualquer alteração da peça principal.
+- Chosen approach and why: ficha estruturada da peça, referência visual aprovada e especificação própria para cada foto; prompt isolado não sustenta a promessa de fidelidade e consistência.
+- Rejected alternatives and why: usar o Still como etapa obrigatória das fotos com modelo, pois são sessões independentes; aprovar automaticamente gerações; tratar fotos sem função comercial como preenchimento do pacote.
+- Out of scope (later): **Modelos da Minha Marca** — salvar uma modelo virtual aprovada e reutilizar a mesma identidade em diferentes produtos, ensaios e coleções.
+- Other later scope: publicação direta em marketplaces, vídeo, cobrança e presets específicos por canal.
+- Stack: manter Next.js, React, TypeScript, Supabase e provedor de geração de imagens, migrando qualquer integração descontinuada antes do novo fluxo.
+- Verification: lint, tipos, testes de fluxo, comparação visual de identidade e peça, revisão humana obrigatória e testes responsivos/acessíveis.
+- Success criteria: nenhuma imagem é chamada de aprovada sem decisão humana; cada foto possui função explícita; identidade da modelo permanece consistente no ensaio; divergências críticas da peça bloqueiam a entrega.
+- Open questions: limite inicial de itens em Kits; presets de canais; política de regeneração e créditos; critérios mensuráveis para consistência visual; quais controles avançados entram no MVP.

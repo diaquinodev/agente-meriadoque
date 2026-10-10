@@ -14,3 +14,6 @@
 - [[meriadoque-telegram-bot/overview]]
 - [[coach-de-estudos/brief]]
 - [[coach-de-estudos/overview]]
+- [[estudio-fotos-marketplace/brief]]
+- [[estudio-fotos-marketplace/overview]]
+- [[estudio-fotos-marketplace/testing]]
