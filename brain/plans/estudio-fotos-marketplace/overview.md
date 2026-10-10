@@ -16,7 +16,7 @@
 - Adiada: workbench profissional; maior densidade e pior primeira experiência em celular.
 - `garment_truth` e identidade aprovada são imutáveis dentro da geração; cenário, pose e acessórios nunca têm prioridade sobre eles.
 - Sem foto traseira, costas não podem ser rotuladas como fiéis; usar ângulo 3/4.
-- O modelo atual está descontinuado, mas documentos do Google divergem sobre a data final; a Fase 1 exige smoke test real e migração para `gemini-3.1-flash-image`.
+- Decisão posterior ao plano original: usar a OpenRouter Image API com `openai/gpt-image-2.5-sunburst`, escolhida para edição precisa com imagens de referência. A Fase 1 exige um smoke test real pela rota da aplicação e uma matriz de capacidades por modelo; configurações não suportadas não podem ser enviadas.
 - Limite inicial assumido para Kits: três itens; alterar somente com evidência de qualidade.
 
 ## Applicable Skills
